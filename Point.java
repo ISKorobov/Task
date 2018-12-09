@@ -1,13 +1,12 @@
 package com.company;
 
 public class Point {
-    public int x,  y, a, b;
-    Point point = new Point();
+    public int x,  y;
+    Point point = new Point(x, y);
 
-    public Point () {
-        System.out.println("Enter point's coordinates ");
-        point.x = x;
-        point.y = y;
+    public Point(int xf, int yf){
+        this.x = xf;
+        this.y = yf;
     }
 
     public Point coordinates () {
@@ -16,14 +15,14 @@ public class Point {
     }
 
     public double tobegin () {
-        double a = point.x * point.x + point.y * point.y;
+        double a = x * x + y * y;
         double len = Math.sqrt(a);
         return len;
     }
 
-    public Point add () {
-        point.x += a;
-        point.y += b;
+    public Point add (int a, int b) {
+        x += a;
+        y += b;
         return point;
     }
 }
