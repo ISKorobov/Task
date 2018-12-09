@@ -4,16 +4,14 @@ import java.util.Scanner;
 
 public class Line extends Point {
     Scanner scanner = new Scanner(System.in);
-    public int x1, y1, x2, y2, x0, y0;
+    public int x1, y1, x2, y2;
     Line line = new Line(x1, y1, x2, y2);
-    Point pointbeg = new Point();
-    Point pointend = new Point();
 
     public Line (int x1, int y1, int x2, int y2) {
-        line.pointbeg.x = x1;
-        line.pointbeg.y = y1;
-        line.pointend.x = x2;
-        line.pointend.y = y2;
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 
     public Line coordinates() {
@@ -59,10 +57,12 @@ public class Line extends Point {
         Angle = (a*a + b*b - c*c) / 2 * a * c;
         Angle = Math.acos(Angle);
         Angle = Angle * 90 / Math.PI;
-       return Angle;
+        return Angle;
    }
 
    public boolean checkpoint () {
+        int x0 = scanner.nextInt();
+        int y0 = scanner.nextInt();
         if ( ((x0 - x1) / (x2 - x1)) == ((y0 - y1) / (x2 - x1))  ) {
             return true;
         } else {
@@ -71,3 +71,4 @@ public class Line extends Point {
    }
 
 }
+
